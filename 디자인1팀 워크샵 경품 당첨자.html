@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- saved from url=(0317)file:///Users/nhn/Downloads/%E1%84%83%E1%85%B5%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB1%E1%84%90%E1%85%B5%E1%86%B7_%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3%E1%84%89%E1%85%A3%E1%86%B8_%E1%84%80%E1%85%A7%E1%86%BC%E1%84%91%E1%85%AE%E1%86%B7%E1%84%83%E1%85%A1%E1%86%BC%E1%84%8E%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%A1_1.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인1팀 워크샵 경품 당첨자</title>
+<link rel="stylesheet" href="./디자인1팀 워크샵 경품 당첨자_files/pretendard.min.css">
+<style>
+  :root {
+    --bg: #F7F4EF;
+    --surface: #FFFFFF;
+    --surface2: #F0EDE7;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.14);
+    --text: #1A1714;
+    --text2: #6B6560;
+    --text3: #9E9890;
+    --accent: #C4522A;
+    --gold: #C49A2A;
+    --silver: #7A8490;
+    --bronze: #A0643A;
+    --purple: #6B52A8;
+    --purple-light: #EEE9F8;
+    --teal: #2A7A62;
+    --teal-light: #E4F3EE;
+    --amber: #B87820;
+    --amber-light: #FDF0D8;
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Pretendard', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 5rem;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    text-align: center;
+    padding: 4rem 1.5rem 2.75rem;
+  }
+  .site-header .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: .75rem;
+  }
+  .site-header h1 {
+    font-size: clamp(1.75rem, 5.5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    line-height: 1.15;
+  }
+  .header-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 1.25rem auto 0;
+    border: none;
+  }
+
+  /* ── Container ── */
+  .container { max-width: 600px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* ── Tabs ── */
+  .tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 2rem;
+    background: var(--surface2);
+    border-radius: var(--radius);
+    padding: 5px;
+  }
+  .tab-btn {
+    padding: 11px 0;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Pretendard', sans-serif;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text3);
+    transition: all .2s;
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+  }
+  .tab-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+  .tab-btn.active {
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 1px 5px rgba(0,0,0,.07);
+  }
+
+  /* ── Tab content ── */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ── Category block ── */
+  .category-block { margin-bottom: 2rem; }
+
+  .category-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .category-title svg { width: 12px; height: 12px; }
+
+  /* ── Winner card ── */
+  .winner-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeUp .45s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .rank-badge {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .badge-1       { background: #FEF3D6; }
+  .badge-2       { background: #F0F1F3; }
+  .badge-3       { background: #FAEEE6; }
+  .badge-special { background: var(--purple-light); }
+  .badge-bonus   { background: var(--teal-light); }
+  .badge-potato  { background: var(--amber-light); }
+  .badge-num     { background: var(--surface2); font-size:13px; font-weight:700; color:var(--text2); }
+
+  .winner-info { flex: 1; min-width: 0; }
+  .winner-prize {
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 3px;
+    font-weight: 500;
+  }
+  .winner-names {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rank-pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pill-1       { background:#FEF3D6; color: var(--gold); }
+  .pill-2       { background:#F0F1F3; color: var(--silver); }
+  .pill-3       { background:#FAEEE6; color: var(--bronze); }
+  .pill-special { background: var(--purple-light); color: var(--purple); }
+  .pill-bonus   { background: var(--teal-light);   color: var(--teal); }
+  .pill-potato  { background: var(--amber-light);  color: var(--amber); }
+
+  /* 단체전 점수 배지 */
+  .score-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text3);
+    background: var(--surface2);
+    padding: 4px 10px;
+    border-radius: 99px;
+    flex-shrink: 0;
+  }
+
+  /* stagger delay */
+  .winner-card:nth-child(1) { animation-delay: .05s; }
+  .winner-card:nth-child(2) { animation-delay: .13s; }
+  .winner-card:nth-child(3) { animation-delay: .21s; }
+  .winner-card:nth-child(4) { animation-delay: .29s; }
+  .winner-card:nth-child(5) { animation-delay: .37s; }
+  .winner-card:nth-child(6) { animation-delay: .45s; }
+
+  /* footer */
+  .page-footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: .04em;
+  }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <p class="eyebrow">Team Workshop</p>
+  <h1>디자인1팀 워크샵<br>경품 당첨자</h1>
+  <hr class="header-rule">
+</div>
+
+<div class="container">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab(&#39;team&#39;, this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      단체전
+    </button>
+    <button class="tab-btn" onclick="switchTab(&#39;solo&#39;, this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      개인전
+    </button>
+  </div>
+
+  <!-- 단체전 -->
+  <div id="tab-team" class="tab-content active">
+    <div class="category-block">
+      <div class="category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        순위
+      </div>
+
+      <div class="winner-card">
+        <div class="rank-badge badge-1">🥇</div>
+        <div class="winner-info">
+          <div class="winner-prize">점심or저녁 회식 / 휴가 1일</div>
+          <div class="winner-names">3파트</div>
+        </div>
+        <div class="score-badge">25점</div>
+        <span class="rank-pill pill-1">1등</span>
+      </div>
+
+      <div class="winner-card">
+        <div class="rank-badge badge-2">🥈</div>
+        <div class="winner-info">
+          <div class="winner-prize">점심 회식 / 오아시스</div>
+          <div class="winner-names">1파트</div>
+        </div>
+        <div class="score-badge">20점</div>
+        <span class="rank-pill pill-2">2등</span>
+      </div>
+
+      <div class="winner-card">
+        <div class="rank-badge badge-3">🥉</div>
+        <div class="winner-info">
+          <div class="winner-prize">커피 타임</div>
+          <div class="winner-names">2파트</div>
+        </div>
+        <div class="score-badge">15점</div>
+        <span class="rank-pill pill-3">3등</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 개인전 -->
+  <div id="tab-solo" class="tab-content">
+
+    <!-- 순위 -->
+    <div class="category-block">
+      <div class="category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        순위
+      </div>
+
+      <div class="winner-card">
+        <div class="rank-badge badge-1">🥇</div>
+        <div class="winner-info">
+          <div class="winner-prize">배민 5만원</div>
+          <div class="winner-names">심은영</div>
+        </div>
+        <span class="rank-pill pill-1">1등</span>
+      </div>
+
+      <div class="winner-card">
+        <div class="rank-badge badge-2">🥈</div>
+        <div class="winner-info">
+          <div class="winner-prize">쿠팡 기프트카드 3만원</div>
+          <div class="winner-names">전혜정</div>
+        </div>
+        <span class="rank-pill pill-2">2등</span>
+      </div>
+
+      <div class="winner-card">
+        <div class="rank-badge badge-3">🥉</div>
+        <div class="winner-info">
+          <div class="winner-prize">CJ기프트 카드 2만원</div>
+          <div class="winner-names">김진아</div>
+        </div>
+        <span class="rank-pill pill-3">3등</span>
+      </div>
+    </div>
+
+    <!-- 특별상 -->
+    <div class="category-block">
+      <div class="category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        특별상
+      </div>
+      <div class="winner-card">
+        <div class="rank-badge badge-special">⭐</div>
+        <div class="winner-info">
+          <div class="winner-prize">선물하기 상품권 1만원</div>
+          <div class="winner-names">안지은</div>
+        </div>
+        <span class="rank-pill pill-special">특별상</span>
+      </div>
+    </div>
+
+    <!-- 보너스상 -->
+    <div class="category-block">
+      <div class="category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+        보너스상
+      </div>
+      <div class="winner-card">
+        <div class="rank-badge badge-bonus">🎁</div>
+        <div class="winner-info">
+          <div class="winner-prize">오아시스</div>
+          <div class="winner-names">장유정 · 김지은</div>
+        </div>
+        <span class="rank-pill pill-bonus">보너스상</span>
+      </div>
+    </div>
+
+    <!-- 감자이벤트 -->
+    <div class="category-block">
+      <div class="category-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+        감자이벤트 미션완료자
+      </div>
+      <div class="winner-card">
+        <div class="rank-badge badge-potato">🥔</div>
+        <div class="winner-info">
+          <div class="winner-prize">오아시스</div>
+          <div class="winner-names">전성욱 · 윤지민 · 노세화</div>
+        </div>
+        <span class="rank-pill pill-potato">미션완료</span>
+      </div>
+    </div>
+
+  </div><!-- /tab-solo -->
+
+  <p class="page-footer">디자인1팀 워크샵 · 2025</p>
+</div>
+
+<script>
+function switchTab(key, btn){
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + key).classList.add('active');
+}
+</script>
+
+
+</body></html>
